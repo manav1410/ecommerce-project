@@ -1,0 +1,39 @@
+{
+  "name": "ecommerce-project",
+  "version": "1.0.0",
+  "description": "This is simple e-commerce project on clothings",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/app.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manav1410/ecommerce-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/manav1410/ecommerce-project/issues"
+  },
+  "homepage": "https://github.com/manav1410/ecommerce-project#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/express-fileupload": "^1.4.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.1.6",
+    "@types/mongoose": "^5.11.97"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dateformat": "^5.0.3",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-fileupload": "^1.4.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^7.3.1",
+    "path": "^0.12.7"
+  }
+}
