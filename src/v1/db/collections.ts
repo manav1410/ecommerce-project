@@ -11,14 +11,12 @@ export const Users = model("users", new Schema({
         },
         required: [true, 'User phone number required']
     },
-    pass: String,
+    pswd: String,
     gen: {
         type: String,
         enum: { values: ['M', 'F', 'O'], message: '{VALUE} is not supported' }
     },
     addr: [new Schema({
-        lt: Number,
-        lg: Number, 
         ln1: String,
         ln2: String,
         ct: String,
