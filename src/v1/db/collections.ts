@@ -1,27 +1,27 @@
 import { model, Schema } from "mongoose";
 
 export const Users = model("users", new Schema({
-    fnm: String,
-    lnm: String,
-    mob: {
+    firstname: String,
+    lastname: String,
+    email: {
         type: String,
-        validate: {
-            validator: (v: string) => /\d{10}/.test(v),
-            message: (props: any) => `${props.value} is not a valid phone number!`
-        },
-        required: [true, 'User phone number required']
+        lowercase: true,
+        unique: true,
+        required: true,
+        validator: (v: string) => /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v),
+        message: (props: any) => `${props.value} is not a valid Email!`
     },
-    pswd: String,
-    gen: {
+    password: String,
+    gender: {
         type: String,
         enum: { values: ['M', 'F', 'O'], message: '{VALUE} is not supported' }
     },
-    addr: [new Schema({
-        ln1: String,
-        ln2: String,
-        ct: String,
-        st: String,
-        zip: {
+    address: [new Schema({
+        addressline1: String,
+        addressline2: String,
+        city: String,
+        state: String,
+        zipcode: {
             validator: (v: string) => /\d{6}/.test(v),
             message: (props: any) => `${props.value} is not a valid Pin Code!`
         },
